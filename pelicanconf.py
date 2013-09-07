@@ -15,12 +15,13 @@ DEFAULT_DATE_FORMAT = "%b %d, %Y"
 TIMEZONE = 'US/Central'
 
 # Article URL generation
-ARTICLE_URL = "blog/{date:%Y}/date:%m/{date%d}/{slug}/"
-ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
 # Title menu options
 MENUITEMS = [('Archives', '/archives.html'),
-             ('Home', 'http://www.kristenthyng.com')]
+             ('Home', 'http://www.kristenthyng.com'),
+             ('Research', 'http://www.kristenthyng.com/research.html')]
 NEWEST_FIRST_ARCHIVES = False
 
 #Github include settings
@@ -31,6 +32,7 @@ GITHUB_SHOW_USER_LINK = True
 
 # Theme
 THEME = "./theme"
+CSS_FILE = "styles.css"
 
 # Plugins
 PLUGIN_PATH = os.path.join(os.environ.get('HOME'), 'src', 'pelican-plugins')
@@ -56,8 +58,8 @@ TWITTER_SHOW_FOLLOWER_COUNT = 'true'
 
 
 # RSS/Atom feeds
-FEED_DOMAIN = SITEURL
-FEED_ATOM = 'atom.xml'
+# FEED_DOMAIN = SITEURL
+# FEED_ATOM = 'atom.xml'
 
 # Search
 SEARCH_BOX = True

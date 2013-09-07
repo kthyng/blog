@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="content" class="body">
+<h1>Blog Archive</h1>
+<br><br>
+<dl>
+{% for article in dates %}
+    <dt><strong><a href='{{ article.url }}'>{{ article.title }}</a></strong></dt>
+    <dd>{{ article.locale_date }}</dd>
+    <br>
+{% endfor %}
+</dl>
+</section>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+{% block content %}        
+{% if articles %}
+    {% for article in articles %}        
+
+        {# First item #}
+        {% if loop.first %}
+            <header>
+                <h2><a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a></h2>
+                {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %} 
+                <br><br>
+                {{ article.summary }}
+            </header>
+            <article>
+            {{ article.content }}
+            </article>
+            <br><br>
+            {% if loop.length > 1 %}
+                <section id="article-list">
+                    <h2>Older posts:</h2>
+                    <ul>
+            {% endif %}
+        {# other items #}
+        {% else %} 
+            <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a> - {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}</li>
+        {% endif %}
+{% endfor %}
+    {% if loop.length > 1 %}
+    </ul>
+    </section><!-- #article-list -->
+{% endif %}
+{% else %}
+    No posts found.
+{% endif %}
+{% endblock content %}
