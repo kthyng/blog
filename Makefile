@@ -8,22 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-FTP_HOST=localhost
-FTP_USER=anonymous
-FTP_TARGET_DIR=/
-
-SSH_HOST=localhost
-SSH_PORT=22
-SSH_USER=root
-SSH_TARGET_DIR=/var/www
-
-S3_BUCKET=my_s3_bucket
-
-CLOUDFILES_USERNAME=my_rackspace_username
-CLOUDFILES_API_KEY=my_rackspace_api_key
-CLOUDFILES_CONTAINER=my_cloudfiles_container
-
-DROPBOX_DIR=~/Dropbox/Public/
+GIT_LOCAL_SITE_REPOS=$(SRC)/kristenthyng
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -102,7 +87,8 @@ cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
 
 github: publish
-	ghp-import $(OUTPUTDIR)
-	git push origin gh-pages
+	-cp -R $(OUTPUTDIR)/* $(GIT_LOCAL_SITE_REPOS)/blog/
+	cd $(GIT_LOCAL_SITE_REPOS); git add * ; git commit --allow-empty-message -m ""
+	# cd $(GIG_LOCAL_SITE_REPOS); git push git@github.com:kthyng/kthyng.github.io
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
