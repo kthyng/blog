@@ -10,7 +10,6 @@
                 <h2><a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a></h2>
                 {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %} 
                 <br><br>
-                {{ article.summary }}
             </header>
             <article>
             {{ article.content }}
@@ -23,7 +22,8 @@
             {% endif %}
         {# other items #}
         {% else %} 
-            <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a> - {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}</li>
+            <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a> - {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %} <br><br>
+            {{ article.summary }}<br></li>
         {% endif %}
 {% endfor %}
     {% if loop.length > 1 %}
