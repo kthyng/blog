@@ -8,7 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-GIT_LOCAL_SITE_REPOS=$(SRC)/kristenthyng
+GIT_LOCAL_SITE_REPOS=$(CURDIR)/../kthyng.github.io
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -89,6 +89,6 @@ cf_upload: publish
 github: publish
 	-cp -R $(OUTPUTDIR)/* $(GIT_LOCAL_SITE_REPOS)/blog/
 	cd $(GIT_LOCAL_SITE_REPOS); git add * ; git commit --allow-empty-message -m ""
-	# cd $(GIG_LOCAL_SITE_REPOS); git push git@github.com:kthyng/kthyng.github.io
+	cd $(GIG_LOCAL_SITE_REPOS); git push git@github.com:kthyng/kthyng.github.io
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
