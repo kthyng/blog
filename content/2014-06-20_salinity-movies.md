@@ -4,7 +4,7 @@ Category:
 Tags: txla, figures, salinity
 Slug: salinity
 Author: Kristen Thyng
-Summary: New surface salinity movies of Texas-Louisiana shelf
+Summary: Surface salinity movies of Texas-Louisiana shelf has been compiled together and made available
 
 
 I just wrapped up a shiny new [set](http://pong.tamu.edu/txla_salinity.html) of 8 years of animations of the surface salinity on the Texas-Louisiana shelf with input from Rob Hetland!
