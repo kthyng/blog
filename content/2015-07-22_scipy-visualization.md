@@ -1,4 +1,4 @@
-Title: SciPy 2015 Wrap Up
+Title: SciPy 2015 Visualization Contest
 Date: 2015-07-22 17:00
 Category: 
 Tags: visualization, plotting, SciPy, conference
