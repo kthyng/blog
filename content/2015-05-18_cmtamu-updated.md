@@ -2,7 +2,7 @@ Title: Updated TAMU colormaps
 Date: 2015-05-18 13:00
 Category: 
 Tags: colormaps, pong, tamu
-Slug: cmtamu
+Slug: cmtamu-updated
 Author: Kristen Thyng
 Summary: An updated set of colormaps are available for making nice, intuitive plots of oceanographic properties.
 

@@ -2,7 +2,7 @@ Title: Updated Surface Salinity Movies
 Date: 2015-07-24 11:00
 Category: 
 Tags: txla, figures, salinity
-Slug: salinity
+Slug: salinity-updated
 Author: Kristen Thyng
 Summary: Surface salinity movies of Texas-Louisiana shelf updated with new colormap
 
