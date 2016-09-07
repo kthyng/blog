@@ -35,7 +35,7 @@ THEME = "./theme"
 CSS_FILE = "styles.css"
 
 # Plugins
-PLUGIN_PATH = os.path.join(os.environ.get('HOME'), 'src', 'pelican-plugins')
+PLUGIN_PATHS = [os.path.join(os.environ.get('HOME'), 'src', 'pelican-plugins')]
 PLUGINS = []
 
 # Feed generation is usually not desired when developing
@@ -44,7 +44,7 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Sharing
-TWITTER_USER = 'kthyng'
+TWITTER_USER = 'thyngkm'
 GOOGLE_PLUS_USER = 'kthyng'
 GOOGLE_PLUS_ONE = True
 GOOGLE_PLUS_HIDDEN = False
