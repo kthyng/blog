@@ -6,7 +6,7 @@ import os
 
 AUTHOR = u'Kristen M. Thyng'
 SITENAME = u'Kristen M. Thyng, Ph.D.'
-SITEURL = ''
+SITEURL = 'http://www.kristenthyng.com/blog'
 
 DEFAULT_LANG = u'en'
 
@@ -22,7 +22,7 @@ ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 MENUITEMS = [('Archives', '/archives.html'),
              ('Home', 'http://www.kristenthyng.com'),
              ('Research', 'http://www.kristenthyng.com/research.html')]
-NEWEST_FIRST_ARCHIVES = False
+NEWEST_FIRST_ARCHIVES = True
 
 #Github include settings
 GITHUB_USER = 'kthyng'
